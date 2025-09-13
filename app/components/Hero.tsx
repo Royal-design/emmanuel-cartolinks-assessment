@@ -83,7 +83,7 @@ export const Hero = () => {
     <div className="relative mt-8 w-full max-md:px-6 md:pl-6">
       <div className="relative">
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex">
+          <div className="flex max-md:gap-2">
             {heroData.map((item, index) => (
               <div key={index} className="w-full flex-none last:pr-0 sm:pr-4 md:pr-14">
                 <div className="h-80 lg:h-100">
