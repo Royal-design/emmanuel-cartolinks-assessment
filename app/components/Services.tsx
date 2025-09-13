@@ -11,7 +11,7 @@ export const Services = () => {
   return (
     <div className="w-full">
       <div className="flex items-center justify-between md:text-lg">
-        <p className="font-bold">Generate</p>
+        <p className="p-2 font-bold">Generate</p>
         <button onClick={() => setOpen(!open)}>
           <span className="hidden items-center space-x-1 sm:flex">
             <ChevronDown
