@@ -1,30 +1,29 @@
-"use client";
+'use client'
 
-import React, { useState } from "react";
-import { services } from "../data";
-import { ServiceCard } from "./ServiceCard";
-import { ChevronDown } from "lucide-react";
+import React, { useState } from 'react'
+import { services } from '../data'
+import { ServiceCard } from './ServiceCard'
+import { ChevronDown } from 'lucide-react'
 
 export const Services = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
 
   return (
     <div className="w-full">
-      <div className="flex justify-end">
+      <div className="flex items-center justify-between md:text-lg">
+        <p className="font-bold">Generate</p>
         <button onClick={() => setOpen(!open)}>
-          <span className="hidden sm:flex items-center space-x-1">
+          <span className="hidden items-center space-x-1 sm:flex">
             <ChevronDown
-              className={`h-4 w-4 text-secondary transition-transform ${
-                open ? "rotate-180" : ""
-              }`}
+              className={`text-secondary h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`}
             />
             <span className="text-secondary text-sm font-medium">
-              {open ? "Show less" : "Show all"}
+              {open ? 'Show less' : 'Show all'}
             </span>
           </span>
         </button>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-2 mt-4">
+      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-2">
         {services.map((service, idx) => (
           <div key={idx} className="w-full">
             <ServiceCard {...service} />
@@ -32,5 +31,5 @@ export const Services = () => {
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
