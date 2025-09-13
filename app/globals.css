@@ -1,26 +1,51 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+@custom-variant hover (&:is(:hover, .hover *));
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-grey: var(--primary-grey);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary-grey2: var(--secondary-grey2);
+  --color-secondary-grey2: var(--secondary-grey2);
+  --color-secondary-darkgrey: var(--secondary-darkgrey);
+  --color-secondary-grey: var(--secondary-grey);
+  --color-background: var(--background);
+  --color-secondary: var(--secondary);
+  --color-border: var(--border);
+}
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --secondary: #006eff;
+  --primary-grey: #f5f5f5;
+  --primary-dark: #6d6d6d;
+  --secondary-grey: #e5e5e5;
+  --secondary-grey2: #ececec;
+  --border: #d6d6d6;
+  --secondary-darkgrey: #313131;
+  --primary: #000000;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: #000000;
+  --secondary: #006eff;
+  --primary-grey: #202020;
+  --primary-dark: #6d6d6d;
+  --secondary-grey: #404040;
+  --secondary-darkgrey: #313131;
+  --secondary-grey2: #343434;
+  --border: #6d6d6d;
+  --primary: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    @apply bg-background;
+  }
 }
